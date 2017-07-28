@@ -74,11 +74,11 @@ var bio = {
     "role": "UI designer and developer",
     "welcomeMessage": "Maecenas tristique a dui ut varius. Etiam a purus porttitor, lobortis ipsum ac, finibus nibh. Ut tempor sed metus vitae sagittis. Mauris nec elementum sem.",
     "contacts": {
-        "mobile": "+994 55 757 96 06",
-        "email": "rasim@magnum.az",
-        "github": "http://github.com/rakhmanovr",
-        "twitter": "@rasim_rakhmanov",
-        "location": "Moscow, Russia"
+		        "mobile": "+994 55 757 96 06",
+		        "email": "rasim@magnum.az",
+		        "github": "http://github.com/rakhmanovr",
+		        "twitter": "@rasim_rakhmanov",
+		        "location": "Moscow, Russia"
     },
     "biopic": "images/me.jpg",
     "skills": ["Graphic Design", "UI/UX", "Photography", "HTML/CSS", "Java Script"]
