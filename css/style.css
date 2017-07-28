@@ -1,0 +1,300 @@
+/** {
+  border: 1px red solid;
+}*/
+
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #f5a623;
+}
+
+#workExperience,
+#projects,
+#header,
+#education,
+.footerContactsWrap,
+.mapHeader {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#topContacts,
+#footerContacts {
+  padding: 20px 0;
+  margin: 0;
+}
+
+.divFullWrap {
+  width: 100%;
+}
+
+.clear-fix {
+  overflow: auto;
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5% 20px 5%;
+}
+
+h1 {
+  font-size: 40px;
+  color: #f5a623;
+  line-height: 48px;
+  display: inline;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #999;
+  line-height: 29px;
+}
+
+h3 {
+  font-style: italic;
+  font-size: 20px;
+  color: #000;
+  line-height: 22px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 17px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  padding: 15px 0 5px 5%;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #f5a623;
+    margin: 0;
+    padding: 0;
+}
+
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: left;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: right;
+}
+
+.descriptionText {
+  width: 80%;
+}
+
+p {
+  font-size: 14px;
+  color: #333;
+  line-height: 21px;
+}
+
+a {
+  color: #1199c3;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+}
+
+.topLink {
+  display: inline;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 22px;
+  color: #f3f3f3;
+  line-height: 28px;
+}
+
+.headerRole {
+  display: block;
+  color: white;
+  padding-bottom: 20px;
+}
+
+#skills-h3 {
+  color: #f5ae23;
+  display: none;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.orange {
+  background-color: #f5ae23;
+}
+
+.orange-text {
+  color: #f5ae23;
+}
+
+.white-text {
+  font-weight: bold;
+  color: #fff;
+  padding: 10px;
+}
+
+.gray {
+  background-color: #f3f3f3;
+  padding: 20px 0;
+  clear: both;
+}
+
+.dark-gray {
+  background-color: #4a4a4a;
+}
+
+.header-image {
+  background-image: url(https://wallpaperscraft.com/image/black_light_dark_figures_73356_1920x1080.jpg);
+  background-size: cover;
+  opacity: 0.9;
+}
+
+
+.flex-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.flex-column {
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+#skills li:not(:first-child):before {
+    content: " / ";
+}
+
+.center-content {
+  padding: 2.5% 0;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.biopic {
+  margin: 0 auto;
+  padding: 20px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+img {
+  padding: 0;
+}
+
+.project-img {
+  width: 49.5%;
+  padding: 20px 0 0 0;
+}
+
+span {
+  padding: 5px;
+}
+
+#lets-connect {
+  text-align: center;
+}
+
+/* Media queries to handle various device widths */
+
+
+
+@media only screen and (max-width:1015px) {
+  .biopic {
+    width: 175px;
+  }
+  #workExperience,
+  #projects,
+  #header,
+  #education,
+  .footerContactsWrap,
+  .mapHeader {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+}
+
+@media only screen and (max-width: 750px) {
+  #skills-h3,
+  .biopic {
+    display: block;
+  }
+
+  .biopic {
+    width: 150px;
+  }
+  .welcome-message {
+    display: none;
+  }
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+  }
+  #skills li:not(:first-child):before {
+      content: "";
+  }
+  .project-img {
+    width: 100%;
+    padding: 5px 0 0 0;
+  }
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin-top: 20px;
+}
+
+#mapDiv {
+  height: 500px;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 750px) {
+  #skills-h3,
+  .biopic {
+    display: block;
+  }
+
+
+}
