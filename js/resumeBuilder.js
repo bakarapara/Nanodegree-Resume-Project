@@ -34,7 +34,7 @@ var work = {
 			"description": "Vestibulum id orci lectus. Donec vitae nunc ipsum. Pellentesque malesuada eros id cursus venenatis."
 		}
 	]
-}
+};
 
 // PROJECTS
 //==========================================================================
@@ -66,7 +66,7 @@ var projects = {
       "images" : ["http://magnum.az/coding/2/images/work1_1x.jpg","http://magnum.az/coding/2/images/work2_1x.jpg"]
 		}
 	]
-}
+};
 
 // BIO
 //==========================================================================
@@ -84,7 +84,7 @@ var bio = {
 		},
 	"biopic": "images/me.jpg",
 	"skills": ["Graphic Design", "UI/UX", "Photography", "HTML/CSS", "Java Script"]
-}
+};
 
 // EDUCATION
 //==========================================================================
@@ -120,7 +120,7 @@ var education = {
 			"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 		}
 	]
-}
+};
 
 // END OF JSON
 //==========================================================================
@@ -226,14 +226,14 @@ function displayEducation() {
 
 	$("#education").append(HTMLonlineClasses);
 
-			for (var i = 0; i < education.onlineCourses.length; i++) {
+			for (var x = 0; x < education.onlineCourses.length; x++) {
 			$("#education").append(HTMLschoolStart);
-			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
-			var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-			var formattedOnlineSchoolTitle = formattedOnlineTitle + formattedOnlineSchool
+			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[x].title).replace("#", education.onlineCourses[i].url);
+			var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[x].school);
+			var formattedOnlineSchoolTitle = formattedOnlineTitle + formattedOnlineSchool;
 			$(".education-entry:last").append(formattedOnlineSchoolTitle);
 
-			var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+			var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[x].dates);
 			$(".education-entry:last").append(formattedOnlineDates);
 
 		}
