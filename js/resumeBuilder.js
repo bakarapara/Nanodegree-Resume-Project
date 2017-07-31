@@ -1,5 +1,62 @@
 // JSON
 //==========================================================================
+
+// BIO
+//==========================================================================
+
+var bio = {
+    "name": "Rasim Rakhmanov",
+    "role": "UI designer and developer",
+    "contacts": {
+            "mobile": "+994 55 757 96 06",
+            "email": "rasim@magnum.az",
+            "github": "http://github.com/rakhmanovr",
+            "twitter": "@rasim_rakhmanov",
+            "location": "Moscow, Russia"
+    },
+    "welcomeMessage": "Maecenas tristique a dui ut varius. Etiam a purus porttitor, lobortis ipsum ac, finibus nibh. Ut tempor sed metus vitae sagittis. Mauris nec elementum sem.",
+    "skills": ["Graphic Design", "UI/UX", "Photography", "HTML/CSS", "Java Script"],
+    "biopic": "images/me.jpg",
+};
+
+
+// EDUCATION
+//==========================================================================
+
+var education = {
+    "schools": [{
+            "name": "Baku Slavic University Lyceum",
+            "location": "Baku, Azerbaijan",
+            "degree": "General Education",
+            "majors": [],
+            "dates": "1998-2001",
+            "url": "www.bsuhl.edu.az"
+        },
+        {
+            "name": "Freie Universität Berlin",
+            "location": "Berlin, Germany",
+            "degree": "B.Sc. Software Engineering",
+            "majors": ["Mathematics", "Engineering"],
+            "dates": "2001-2004",
+            "url": "www.fu-berlin.de"
+        }
+    ],
+    "onlineCourses": [{
+            "title": "Intro to Computer Science",
+            "school": "Udacity",
+            "dates": "2016",
+            "url": "https://www.udacity.com/course/intro-to-computer-science--cs101"
+        },
+        {
+            "title": "Front-End Web Developer Nanodegree",
+            "school": "Udacity",
+            "dates": "2016-2017",
+            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+        }
+    ]
+};
+
+
 // WORK
 //==========================================================================
 var work = {
@@ -39,7 +96,7 @@ var work = {
 
 var projects = {
 
-    "project": [{
+    "projects": [{
             "title": "2010 Unibank Annual Report",
             "dates": "2010",
             "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
@@ -66,59 +123,6 @@ var projects = {
     ]
 };
 
-// BIO
-//==========================================================================
-
-var bio = {
-    "name": "Rasim Rakhmanov",
-    "role": "UI designer and developer",
-    "welcomeMessage": "Maecenas tristique a dui ut varius. Etiam a purus porttitor, lobortis ipsum ac, finibus nibh. Ut tempor sed metus vitae sagittis. Mauris nec elementum sem.",
-    "contacts": {
-            "mobile": "+994 55 757 96 06",
-            "email": "rasim@magnum.az",
-            "github": "http://github.com/rakhmanovr",
-            "twitter": "@rasim_rakhmanov",
-            "location": "Moscow, Russia"
-    },
-    "biopic": "images/me.jpg",
-    "skills": ["Graphic Design", "UI/UX", "Photography", "HTML/CSS", "Java Script"]
-};
-
-// EDUCATION
-//==========================================================================
-
-var education = {
-    "schools": [{
-            "name": "Baku Slavic University Lyceum",
-            "city": "Baku, Azerbaijan",
-            "degree": "General Education",
-            "dates": "1998-2001",
-            "url": "www.bsuhl.edu.az",
-            "majors": []
-        },
-        {
-            "name": "Freie Universität Berlin",
-            "city": "Berlin, Germany",
-            "degree": "B.Sc. Software Engineering",
-            "dates": "2001-2004",
-            "url": "www.fu-berlin.de",
-            "majors": ["Mathematics", "Engineering"]
-        }
-    ],
-    "onlineCourses": [{
-            "title": "Intro to Computer Science",
-            "school": "Udacity",
-            "dates": "2016",
-            "url": "https://www.udacity.com/course/intro-to-computer-science--cs101"
-        },
-        {
-            "title": "Front-End Web Developer Nanodegree",
-            "school": "Udacity",
-            "dates": "2016-2017",
-            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-        }
-    ]
-};
 
 // END OF JSON
 //==========================================================================
@@ -132,7 +136,7 @@ var education = {
 //==========================================================================
 
 
-function displayBio() {
+bio.display = function() {
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedBioPic);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -149,22 +153,19 @@ function displayBio() {
             $("#skills").append(formattedSkill);
         }
     }
-}
 
-
-function displayContacts(id) {
     var formattedContactEmail = HTMLemail.replace(/%data%/g, bio.contacts.email);
-    $("#" + id).append(formattedContactEmail);
     var formattedContactMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    $("#" + id).append(formattedContactMobile);
     var formattedContactGithub = HTMLgithub.replace(/%data%/g, bio.contacts.github);
-    $("#" + id).append(formattedContactGithub);
     var formattedContactLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#" + id).append(formattedContactLocation);
+    $("#topContacts, #footerContacts").append(formattedContactEmail)
+        .append(formattedContactMobile)
+        .append(formattedContactGithub)
+        .append(formattedContactLocation);
 }
 
 
-function displayWork() {
+work.display = function() {
     for (var i = 0; i < work.jobs.length; i++) {
         $("#workExperience").append(HTMLworkStart);
 
@@ -184,18 +185,18 @@ function displayWork() {
 }
 
 
-function displayProjects() {
-    for (var i = 0; i < projects.project.length; i++) {
+projects.display = function() {
+    for (var i = 0; i < projects.projects.length; i++) {
         $("#projects").append(HTMLprojectStart);
-        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.project[i].title);
+        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
         $(".project-entry:last").append(formattedProjectTitle);
-        var formattedProjectYear = HTMLprojectDates.replace("%data%", projects.project[i].dates);
+        var formattedProjectYear = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
         $(".project-entry:last").append(formattedProjectYear);
-        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.project[i].description);
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
         $(".project-entry:last").append(formattedProjectDescription);
-        if (projects.project[i].images.length > 0) {
-            for (var g = 0; g < projects.project[i].images.length; g++) {
-                var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.project[i].images[g]);
+        if (projects.projects[i].images.length > 0) {
+            for (var g = 0; g < projects.projects[i].images.length; g++) {
+                var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[g]);
                 $(".project-entry:last").append(formattedProjectImage);
             }
         }
@@ -203,8 +204,8 @@ function displayProjects() {
 }
 
 
-function displayEducation() {
-    for (var i = 0; i < education.schools.length; i++) {
+education.display = function() {
+    education.schools.forEach(function(item, i) {
         $("#education").append(HTMLschoolStart);
 
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
@@ -216,15 +217,15 @@ function displayEducation() {
         $(".education-entry:last").append(educationTitle);
         $(".education-entry:last").append(formattedSchoolDates);
 
-        for (var z = 0; z < education.schools[i].majors.length; z++) {
+        education.schools[i].majors.forEach(function(item, z) {
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[z]);
             $(".education-entry:last").append(formattedSchoolMajor);
-        }
-    }
+        });
+    });
 
     $("#education").append(HTMLonlineClasses);
 
-    for (var x = 0; x < education.onlineCourses.length; x++) {
+    education.onlineCourses.forEach(function(item, x) {
         $("#education").append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[x].title).replace("#", education.onlineCourses[x].url);
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[x].school);
@@ -234,18 +235,16 @@ function displayEducation() {
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[x].dates);
         $(".education-entry:last").append(formattedOnlineDates);
 
-    }
+    });
 }
 
 // CALL FUNCTIONS
 //==========================================================================
 
-displayBio();
-displayContacts("topContacts");
-displayWork();
-displayProjects();
-displayEducation();
-displayContacts("footerContacts");
+bio.display();
+work.display();
+projects.display();
+education.display();
 
 
 // CLICKS
