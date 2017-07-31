@@ -162,7 +162,7 @@ bio.display = function() {
         .append(formattedContactMobile)
         .append(formattedContactGithub)
         .append(formattedContactLocation);
-}
+};
 
 
 work.display = function() {
@@ -182,7 +182,7 @@ work.display = function() {
         var formattedJob = formattedJobLocation + formattedJobDescription;
         $(".work-entry:last").append(formattedJob);
     }
-}
+};
 
 
 projects.display = function() {
@@ -201,7 +201,7 @@ projects.display = function() {
             }
         }
     }
-}
+};
 
 
 education.display = function() {
@@ -236,7 +236,7 @@ education.display = function() {
         $(".education-entry:last").append(formattedOnlineDates);
 
     });
-}
+};
 
 // CALL FUNCTIONS
 //==========================================================================
